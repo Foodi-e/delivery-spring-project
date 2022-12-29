@@ -7,9 +7,12 @@ import com.itstep.exam.entity.Delivery;
 import com.itstep.exam.entity.Transporter;
 import com.itstep.exam.entity.Warehouse;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.factory.Mappers;
 
 @org.mapstruct.Mapper(componentModel = "spring")
 public interface Mapper {
+    Mapper INSTANCE = Mappers.getMapper(Mapper.class);
+
     WarehouseDto toDto(Warehouse warehouse);
     Warehouse toEntity(WarehouseDto dto);
     void merge(WarehouseDto warehouseDto, @MappingTarget Warehouse warehouse);

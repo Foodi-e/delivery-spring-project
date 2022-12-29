@@ -8,11 +8,11 @@ INSERT INTO warehouse (title, city, street, longitude, latitude) VALUES
     ('Cucumbers world', 'Kyiv', 'Maidan', '123.232.34' ,'54.153.13'),
     ('Tomatoes world', 'Nadvirna', 'Hreschatyk', '123.232.34' ,'54.153.13');
 
-INSERT INTO delivery (cargo_amount, cargo_name, status, transporter_id, warehouse_to_id) VALUES
-    ('500','tomatoes', 'SHIPPED', '2', '2'),
-    ('200','cucumbers', 'CANCELED', '1', '1'),
-    ('1000','pork', 'PENDING', '2', '2'),
-    ('500','tomatoes', 'DELIVERED', '3', '3');
+INSERT INTO delivery (cargo_amount, cargo_name, status, transporter_id, warehouse_to_id, warehouse_from_id) VALUES
+    ('500','tomatoes', 'SHIPPED', '2', '2','3'),
+    ('200','cucumbers', 'CANCELED', '1', '1','2'),
+    ('1000','pork', 'PENDING', '2', '2','1'),
+    ('500','tomatoes', 'DELIVERED', '3', '3','2');
 
 
 
