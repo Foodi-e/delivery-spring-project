@@ -22,6 +22,9 @@ public class DeliveryService {
 
     public Page<DeliveryDto> getAll(Pageable pageable) {
         Page<Delivery> deliveries = deliveryRepository.findAll(pageable);
+//        for (Delivery delivery : deliveries) {
+//            System.out.println(delivery);
+//        }
         return deliveries.map(mapper::toDto);
 
     }
@@ -29,6 +32,7 @@ public class DeliveryService {
     public DeliveryDto get(@PathVariable Long id){
         Delivery delivery = deliveryRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(id));
+        System.out.println("get");
         return mapper.toDto(delivery);
     }
 
